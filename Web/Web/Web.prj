@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project>
+   <description>Automate Test Web For Co-op Working</description>
+   <name>Web</name>
+   <tag></tag>
+   <UUID>3eb8b394-0c05-4a5b-8519-989d510e183b</UUID>
+   <pageLoadTimeout>30</pageLoadTimeout>
+</Project>

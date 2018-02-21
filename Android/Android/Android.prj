@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project>
+   <description>Automate Test Android For Co-op Working</description>
+   <name>Android</name>
+   <tag></tag>
+   <UUID>f7a1ac86-6968-4595-9b74-57d47493b3c5</UUID>
+   <pageLoadTimeout>30</pageLoadTimeout>
+</Project>

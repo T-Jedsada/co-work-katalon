@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project>
+   <description>Automate Test APIs For Co-op Working</description>
+   <name>APIs</name>
+   <tag></tag>
+   <UUID>b7db7581-c044-4e7a-b8db-d97e70638f30</UUID>
+   <pageLoadTimeout>30</pageLoadTimeout>
+</Project>
