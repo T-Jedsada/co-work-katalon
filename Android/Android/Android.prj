@@ -4,5 +4,5 @@
    <name>Android</name>
    <tag></tag>
    <UUID>f7a1ac86-6968-4595-9b74-57d47493b3c5</UUID>
-   <pageLoadTimeout>30</pageLoadTimeout>
+   <pageLoadTimeout>0</pageLoadTimeout>
 </Project>
