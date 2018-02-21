@@ -2,4 +2,9 @@
 <GlobalVariableEntities>
    <description></description>
    <tag></tag>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'androidapp/APIDemos.apk'</initValue>
+      <name>APK_URL</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>
