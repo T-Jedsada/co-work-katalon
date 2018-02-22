@@ -2,4 +2,9 @@
 <GlobalVariableEntities>
    <description></description>
    <tag></tag>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://www.google.co.th/'</initValue>
+      <name>URL</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

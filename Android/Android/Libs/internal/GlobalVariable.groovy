@@ -16,4 +16,9 @@ import groovy.transform.CompileStatic
 @CompileStatic
 public class GlobalVariable {
 	 
+    /**
+     * <p></p>
+     */
+	public static Object APK_URL = 'androidapp/APIDemos.apk'
+	 
 }
