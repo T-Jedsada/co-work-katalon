@@ -19,19 +19,37 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-Mobile.startApplication('', false)
+Mobile.startApplication(GlobalVariable.APK_URL, false)
 
-Mobile.waitForElementPresent(findTestObject('Register/btn/btnRegister'), 0)
+Mobile.waitForElementPresent(findTestObject('Register/txt/txt Dont have account'), 0)
 
-Mobile.tap(findTestObject('Register/btn/btnRegister'), 0)
+Mobile.tap(findTestObject('Register/txt/txt Dont have account'), 0)
 
-Mobile.waitForElementPresent(findTestObject('Register/btn/btnSubmit'), 0)
+Mobile.waitForElementPresent(findTestObject('Register/edt/edt Name'), 0)
 
-Mobile.waitForElementPresent(findTestObject('Register/btn/btnFacebookRegister'), 0)
+Mobile.waitForElementPresent(findTestObject('Register/edt/edt E-mail'), 0)
 
-Mobile.tap(findTestObject('Register/btn/btnSubmit'), 0)
+Mobile.waitForElementPresent(findTestObject('Register/edt/edt Pass'), 0)
 
-Mobile.scrollToText('', FailureHandling.STOP_ON_FAILURE)
+Mobile.waitForElementPresent(findTestObject('Register/edt/edt RePass'), 0)
+
+Mobile.waitForElementPresent(findTestObject('Register/img/img Profile'), 0)
+
+Mobile.scrollToText('Facebook', FailureHandling.STOP_ON_FAILURE)
+
+Mobile.waitForElementPresent(findTestObject('Register/btn/btn Register Submit'), 0)
+
+Mobile.tap(findTestObject('Register/btn/btn Register Submit'), 0)
+
+Mobile.waitForElementPresent(findTestObject('Register/edt/edt Name'), 0)
+
+Mobile.waitForElementPresent(findTestObject('Register/edt/edt E-mail'), 0)
+
+Mobile.waitForElementPresent(findTestObject('Register/edt/edt Pass'), 0)
+
+Mobile.waitForElementPresent(findTestObject('Register/edt/edt RePass'), 0)
+
+Mobile.waitForElementPresent(findTestObject('Register/img/img Profile'), 0)
 
 Mobile.closeApplication()
 

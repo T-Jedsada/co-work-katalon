@@ -19,7 +19,7 @@ public class GlobalVariable {
     /**
      * <p></p>
      */
-	public static Object APK_URL = 'androidapp/APIDemos.apk'
+	public static Object APK_URL = 'androidapp/APKCOWORK.apk'
 	 
     /**
      * <p></p>
@@ -29,7 +29,7 @@ public class GlobalVariable {
     /**
      * <p></p>
      */
-	public static Object EMAIL_RGT = 'patawee@gmail.com'
+	public static Object EMAIL_RGT = 'psgolf11@gmail.com'
 	 
     /**
      * <p></p>

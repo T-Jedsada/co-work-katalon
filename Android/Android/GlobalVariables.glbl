@@ -4,7 +4,7 @@
    <tag></tag>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'androidapp/APIDemos.apk'</initValue>
+      <initValue>'androidapp/APKCOWORK.apk'</initValue>
       <name>APK_URL</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -14,7 +14,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'patawee@gmail.com'</initValue>
+      <initValue>'psgolf11@gmail.com'</initValue>
       <name>EMAIL_RGT</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>

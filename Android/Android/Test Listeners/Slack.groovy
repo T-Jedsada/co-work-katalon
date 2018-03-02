@@ -56,16 +56,16 @@ class Slack {
 		
 	}
 
-//	@BeforeTestSuite
-//	def notifyBeforeTestSuite(TestSuiteContext testSuiteContext) {
-//		slackMessage.setHttpBody('{"text": "' + testSuiteContext.getTestSuiteId() + ': Started"}"')
-//		postToSlack()
-//		
-//	}
-//
-//	@AfterTestSuite
-//	def notifyAfterTestSuite(TestSuiteContext testSuiteContext) {
-//		slackMessage.setHttpBody('{"text": "' + testSuiteContext.getTestSuiteId() + ': ' + testSuiteStatus + '"}"')
-//		postToSlack()
-//	}
+	@BeforeTestSuite
+	def notifyBeforeTestSuite(TestSuiteContext testSuiteContext) {
+		slackMessage.setHttpBody('{"text": "' + testSuiteContext.getTestSuiteId() + ': Started"}"')
+		postToSlack()
+		
+	}
+
+	@AfterTestSuite
+	def notifyAfterTestSuite(TestSuiteContext testSuiteContext) {
+		slackMessage.setHttpBody('{"text": "' + testSuiteContext.getTestSuiteId() + ': ' + testSuiteStatus + '"}"')
+		postToSlack()
+	}
 }
