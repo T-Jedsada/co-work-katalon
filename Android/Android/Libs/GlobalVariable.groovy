@@ -21,4 +21,19 @@ public class GlobalVariable {
      */
 	public static Object APK_URL = 'androidapp/APIDemos.apk'
 	 
+    /**
+     * <p></p>
+     */
+	public static Object NAME_RGT = 'patawee'
+	 
+    /**
+     * <p></p>
+     */
+	public static Object EMAIL_RGT = 'patawee@gmail.com'
+	 
+    /**
+     * <p></p>
+     */
+	public static Object PASS_RGT = '123456'
+	 
 }

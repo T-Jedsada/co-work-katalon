@@ -7,4 +7,19 @@
       <initValue>'androidapp/APIDemos.apk'</initValue>
       <name>APK_URL</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'patawee'</initValue>
+      <name>NAME_RGT</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'patawee@gmail.com'</initValue>
+      <name>EMAIL_RGT</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'123456'</initValue>
+      <name>PASS_RGT</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

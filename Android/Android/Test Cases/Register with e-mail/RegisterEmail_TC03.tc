@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>Simple TestCase</name>
+   <name>RegisterEmail_TC03</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>dc1d23c5-a059-465f-98ca-8c443aed7b01</testCaseGuid>
+   <testCaseGuid>66905e87-7cdd-4556-9da6-7f70f51ff07b</testCaseGuid>
 </TestCaseEntity>

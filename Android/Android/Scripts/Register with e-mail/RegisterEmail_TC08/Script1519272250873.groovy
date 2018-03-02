@@ -21,14 +21,29 @@ import internal.GlobalVariable as GlobalVariable
 
 Mobile.startApplication(GlobalVariable.APK_URL, false)
 
-Mobile.tap(findTestObject('android.widget.TextView - Graphics'), 10)
+Mobile.waitForElementPresent(findTestObject('Register/btn/btnRegister'), 0)
 
-Mobile.scrollToText('Xfermodes')
+Mobile.tap(findTestObject('Register/btn/btnRegister'), 0)
 
-'Get item\'s label'
-def itemText = Mobile.getText(findTestObject('android.widget.TextView - Xfermodes'), 10)
+Mobile.waitForElementPresent(findTestObject('Register/edt/edtName'), 0)
 
-Mobile.verifyEqual(itemText, 'Xfermodes')
+Mobile.setText(findTestObject('Register/edt/edtName'), GlobalVariable.NAME_RGT, 0)
+
+Mobile.waitForElementPresent(findTestObject('Register/edt/edtEmail'), 0)
+
+Mobile.setText(findTestObject('Register/edt/edtEmail'), GlobalVariable.EMAIL_RGT, 0)
+
+Mobile.waitForElementPresent(findTestObject('Register/edt/edtPassword'), 0)
+
+Mobile.setText(findTestObject('Register/edt/edtPassword'), GlobalVariable.PASS_RGT, 0)
+
+Mobile.waitForElementPresent(findTestObject('Register/btn/btnSubmit'), 0)
+
+Mobile.waitForElementPresent(findTestObject('Register/btn/btnFacebookRegister'), 0)
+
+Mobile.tap(findTestObject('Register/btn/btnSubmit'), 0)
+
+Mobile.scrollToText('', FailureHandling.STOP_ON_FAILURE)
 
 Mobile.closeApplication()
 
