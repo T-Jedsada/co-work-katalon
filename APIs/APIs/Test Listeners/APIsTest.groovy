@@ -24,13 +24,17 @@ import com.kms.katalon.core.context.TestCaseContext
 import com.kms.katalon.core.context.TestSuiteContext
 import java.util.UUID;
 
+import org.junit.After
+
 class APIsTest {
 	
 	private RequestObject api = findTestObject('Object Repository/Register')
 	
+	def response
+	
 	private void postAPI(){
 		if(true){
-			def response = WS.sendRequest(api)
+			response = WS.sendRequest(api)
 			WS.verifyResponseStatusCode(response, 200)
 		}
 	}
@@ -43,7 +47,7 @@ class APIsTest {
 
 	
 	def sampleBeforeTestCase() {
-		api.setHttpBody('{"display_name": "test register","email": "'+generateString()+'@golfja.com","password": "123456","password_confirmation": "123456","g_recaptcha_response": "LUoOhpwUbIe5sfgwsotJ2nDXx99jvflG","newsletter": 1,"profile_image": "url","lang": "en"}')
+		api.setHttpBody('{"name": "test register","email": "'+generateString()+'@golfja.com","password": "123456","image": "url"}')
 		postAPI()
 	}
 	

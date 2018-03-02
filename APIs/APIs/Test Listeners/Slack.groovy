@@ -68,4 +68,4 @@ class Slack {
 //		slackMessage.setHttpBody('{"text": "' + testSuiteContext.getTestSuiteId() + ': ' + testSuiteStatus + '"}"')
 //		postToSlack()
 //	}
-}
+ }
