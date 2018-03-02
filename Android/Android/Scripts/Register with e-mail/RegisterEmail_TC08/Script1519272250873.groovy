@@ -21,29 +21,51 @@ import internal.GlobalVariable as GlobalVariable
 
 Mobile.startApplication(GlobalVariable.APK_URL, false)
 
-Mobile.waitForElementPresent(findTestObject('Register/btn/btnRegister'), 0)
+Mobile.waitForElementPresent(findTestObject('Register/txt/txt Dont have account'), 0)
 
-Mobile.tap(findTestObject('Register/btn/btnRegister'), 0)
+Mobile.tap(findTestObject('Register/txt/txt Dont have account'), 0)
 
-Mobile.waitForElementPresent(findTestObject('Register/edt/edtName'), 0)
+Mobile.waitForElementPresent(findTestObject('Register/edt/edt Name'), 0)
 
-Mobile.setText(findTestObject('Register/edt/edtName'), GlobalVariable.NAME_RGT, 0)
+Mobile.setText(findTestObject('Register/edt/edt Name'), GlobalVariable.NAME_RGT, 0)
 
-Mobile.waitForElementPresent(findTestObject('Register/edt/edtEmail'), 0)
+Mobile.waitForElementPresent(findTestObject('Register/edt/edt E-mail'), 0)
 
-Mobile.setText(findTestObject('Register/edt/edtEmail'), GlobalVariable.EMAIL_RGT, 0)
+Mobile.setText(findTestObject('Register/edt/edt E-mail'), GlobalVariable.EMAIL_RGT, 0)
 
-Mobile.waitForElementPresent(findTestObject('Register/edt/edtPassword'), 0)
+Mobile.waitForElementPresent(findTestObject('Register/edt/edt Pass'), 0)
 
-Mobile.setText(findTestObject('Register/edt/edtPassword'), GlobalVariable.PASS_RGT, 0)
+Mobile.setText(findTestObject('Register/edt/edt Pass'), GlobalVariable.PASS_RGT, 0)
 
-Mobile.waitForElementPresent(findTestObject('Register/btn/btnSubmit'), 0)
+Mobile.waitForElementPresent(findTestObject('Register/edt/edt RePass'), 0)
 
-Mobile.waitForElementPresent(findTestObject('Register/btn/btnFacebookRegister'), 0)
+Mobile.setText(findTestObject('Register/edt/edt RePass'), GlobalVariable.PASS_RGT, 0)
 
-Mobile.tap(findTestObject('Register/btn/btnSubmit'), 0)
+Mobile.waitForElementPresent(findTestObject('Register/img/img Profile'), 0)
 
-Mobile.scrollToText('', FailureHandling.STOP_ON_FAILURE)
+Mobile.tap(findTestObject('Register/img/img Profile'), 0)
+
+Mobile.waitForElementPresent(findTestObject('Register/img/img In Select img'), 0)
+
+Mobile.tap(findTestObject('Register/img/img In Select img'), 0)
+
+Mobile.delay(2, FailureHandling.STOP_ON_FAILURE)
+
+Mobile.waitForElementPresent(findTestObject('Register/img/img In Select img'), 0)
+
+Mobile.tap(findTestObject('Register/img/img In Select img'), 0)
+
+Mobile.scrollToText('Facebook', FailureHandling.STOP_ON_FAILURE)
+
+Mobile.waitForElementPresent(findTestObject('Register/btn/btn Register Submit'), 0)
+
+Mobile.tap(findTestObject('Register/btn/btn Register Submit'), 0)
+
+Mobile.delay(2, FailureHandling.STOP_ON_FAILURE)
+
+Mobile.waitForElementPresent(findTestObject('Register/edt/edt E-mail'), 0)
+
+Mobile.setText(findTestObject('Register/edt/edt E-mail'), 'psgolf123@gmail.com', 0)
 
 Mobile.closeApplication()
 

@@ -20,4 +20,10 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
 APIsTest api = new APIsTest()
+
 api.sampleBeforeTestCase()
+
+WS.verifyElementPropertyValue(api.response, 'success', 'true')
+
+WS.verifyElementPropertyValue(api.response, 'data.name', 'test register')
+
