@@ -16,5 +16,5 @@ before_script:
   - export DISPLAY=:99.0
   
 script:
-  - cd web
-  - ./Web/runchrome.sh
+  - cd Web/Web
+  - sh runchrome.sh
