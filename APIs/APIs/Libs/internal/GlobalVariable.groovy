@@ -16,4 +16,9 @@ import groovy.transform.CompileStatic
 @CompileStatic
 public class GlobalVariable {
 	 
+    /**
+     * <p></p>
+     */
+	public static Object server = 'https://api-co-work.herokuapp.com/'
+	 
 }
