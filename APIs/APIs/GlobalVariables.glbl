@@ -2,4 +2,9 @@
 <GlobalVariableEntities>
    <description></description>
    <tag></tag>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://api-co-work.herokuapp.com/'</initValue>
+      <name>server</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>
