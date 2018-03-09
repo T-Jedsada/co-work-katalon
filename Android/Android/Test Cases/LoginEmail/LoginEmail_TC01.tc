@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>LoginEmail_TC01</name>
+   <tag>forgotpass</tag>
+   <comment></comment>
+   <testCaseGuid>f4047ddc-1a8e-4443-bcd7-5c3572627d17</testCaseGuid>
+</TestCaseEntity>
