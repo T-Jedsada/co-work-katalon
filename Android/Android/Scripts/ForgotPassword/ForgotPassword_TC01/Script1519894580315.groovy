@@ -21,19 +21,35 @@ import internal.GlobalVariable as GlobalVariable
 
 Mobile.startApplication(GlobalVariable.APK_URL, false)
 
-Mobile.waitForElementPresent(findTestObject('ForgotPassword/txt Forgot Password'), 0)
+Mobile.waitForElementPresent(findTestObject('go to login page'), 0)
 
-Mobile.tap(findTestObject('ForgotPassword/txt Forgot Password'), 0)
+Mobile.tap(findTestObject('go to login page'), 0)
 
-Mobile.waitForElementPresent(findTestObject('ForgotPassword/txt Reset your password'), 0)
+Mobile.waitForElementPresent(findTestObject('ForgotPassword/txt/txt Forgot Password'), 0)
+
+Mobile.tap(findTestObject('ForgotPassword/txt/txt Forgot Password'), 0)
+
+Mobile.waitForElementPresent(findTestObject('ForgotPassword/txt/txt Reset your password'), 0)
 
 Mobile.waitForElementPresent(findTestObject('ForgotPassword/edt email'), 0)
 
-Mobile.setText(findTestObject('ForgotPassword/edt email'), GlobalVariable.NAME_RGT, 0)
+Mobile.setText(findTestObject('ForgotPassword/edt email'), GlobalVariable.EMAIL_RGT, 0)
 
 Mobile.waitForElementPresent(findTestObject('ForgotPassword/btn Send'), 0)
 
 Mobile.tap(findTestObject('ForgotPassword/btn Send'), 0)
+
+Mobile.waitForElementPresent(findTestObject('ForgotPassword/txt/txt Thanks '), 0)
+
+Mobile.waitForElementPresent(findTestObject('ForgotPassword/txt/txt Please follow the link in the email'), 0)
+
+Mobile.waitForElementPresent(findTestObject('ForgotPassword/txt/txt to reset your password'), 0)
+
+Mobile.waitForElementPresent(findTestObject('ForgotPassword/btn Back to Login'), 0)
+
+Mobile.tap(findTestObject('ForgotPassword/btn Back to Login'), 0)
+
+Mobile.waitForElementPresent(findTestObject('ForgotPassword/txt/txt Forgot Password'), 0)
 
 Mobile.closeApplication()
 
