@@ -19,29 +19,27 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-Mobile.startApplication(GlobalVariable.APK_URL, false)
+Mobile.startApplication(GlobalVariable.APK_URL, true)
 
 Mobile.waitForElementPresent(findTestObject('go to login page'), 0)
 
 Mobile.tap(findTestObject('go to login page'), 0)
 
-Mobile.waitForElementPresent(findTestObject('ForgotPassword/txt/txt Forgot Password'), 0)
+Mobile.waitForElementPresent(findTestObject('Login/edt E-mail'), 0)
 
-Mobile.tap(findTestObject('ForgotPassword/txt/txt Forgot Password'), 0)
+Mobile.setText(findTestObject('Login/edt E-mail'), GlobalVariable.EMAIL_RGT, 0)
 
-Mobile.waitForElementPresent(findTestObject('ForgotPassword/txt/txt Reset your password'), 0)
+Mobile.waitForElementPresent(findTestObject('Login/edt pass'), 0)
 
-Mobile.waitForElementPresent(findTestObject('ForgotPassword/edt email'), 0)
+Mobile.setText(findTestObject('Login/edt pass'), GlobalVariable.PASS_RGT, 0)
 
-Mobile.setText(findTestObject('ForgotPassword/edt email'), GlobalVariable.NAME_RGT, 0)
+Mobile.waitForElementPresent(findTestObject('Login/btn Log in'), 0, FailureHandling.STOP_ON_FAILURE)
 
-Mobile.waitForElementPresent(findTestObject('ForgotPassword/btn Send'), 0)
+Mobile.tap(findTestObject('Login/btn Log in'), 0, FailureHandling.STOP_ON_FAILURE)
 
-Mobile.tap(findTestObject('ForgotPassword/btn Send'), 0)
+Mobile.waitForElementPresent(findTestObject('go to login page'), 0)
 
-Mobile.waitForElementPresent(findTestObject('ForgotPassword/edt email'), 0)
-
-Mobile.setText(findTestObject('ForgotPassword/edt email'), GlobalVariable.EMAIL_RGT, 0)
+Mobile.tap(findTestObject('go to login page'), 0)
 
 Mobile.closeApplication()
 
