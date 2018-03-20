@@ -23,18 +23,20 @@ import com.kms.katalon.core.annotation.AfterTestSuite
 import com.kms.katalon.core.context.TestCaseContext
 import com.kms.katalon.core.context.TestSuiteContext
 
-//class Slack {
-//	
-//	private RequestObject slackMessage = findTestObject('Object Repository/APIs/Slack')
-//	private String testCaseStatus = "ERROR"
-//	private String testSuiteStatus = "PASSED"
-//	
-//	private void postToSlack() {
-//		if (true) {
-//			WS.sendRequest(slackMessage)
-//		}
-//	}
-//	
+class Slack {
+	
+	private RequestObject slackMessage = findTestObject('Object Repository/APIs/Slack')
+	private String testCaseStatus = "ERROR"
+	private String testCaseName = ""
+	private String testSuiteName = ""
+	private String testSuiteStatus = "PASSED"
+	
+	private void postToSlack() {
+		if (true) {
+			WS.sendRequest(slackMessage)
+		}
+	}
+	
 //	@BeforeTestCase
 //	def notifyBeforeTestCase(TestCaseContext testCaseContext) {
 //
@@ -42,30 +44,43 @@ import com.kms.katalon.core.context.TestSuiteContext
 //		postToSlack()
 //
 //	}
-//	
-//	@AfterTestCase
-//	def notifyAfterTestCase(TestCaseContext testCaseContext) {
-//
-//		testCaseStatus = testCaseContext.getTestCaseStatus()
-//		Map variables = testCaseContext.getTestCaseVariables()
+	
+	@AfterTestCase
+	def notifyAfterTestCase(TestCaseContext testCaseContext) {
+
+		testCaseStatus = testCaseContext.getTestCaseStatus()
+		testCaseName = testCaseContext.getTestCaseId()
+		def value = testCaseName.split('/')
+		def result = value[value.size()-1]
+		//Map variables = testCaseContext.getTestCaseVariables()
 //		slackMessage.setHttpBody('{"text": "Test APIs : ' + testCaseContext.getTestCaseId() + ': ' + testCaseStatus + '"}"')
 //		postToSlack()
-//		if (!testCaseStatus.equals("PASSED")){
-//			testSuiteStatus = "FAILED"
-//		} 
+		if (!testCaseStatus.equals("PASSED")){
+			testSuiteStatus = "FAILED"
+		} 
+		if(testCaseStatus.equals("ERROR")){
+			slackMessage.setHttpBody('{"text": "Test APIs : ' + result + ': ' + testCaseStatus + '"}"')
+			postToSlack()
+		}
+	}
+
+//	@BeforeTestSuite
+//	def notifyBeforeTestSuite(TestSuiteContext testSuiteContext) {
+//
+//		testSuiteName = testSuiteContext.getTestSuiteId()
+//		def value = testSuiteName.split('/')
+//		def result = value[value.size()-1]
+//		slackMessage.setHttpBody('{"text": TestSuite APIs : "' + result + ': Started"}"')
+//		postToSlack()
 //		
 //	}
 //
-////	@BeforeTestSuite
-////	def notifyBeforeTestSuite(TestSuiteContext testSuiteContext) {
-////		slackMessage.setHttpBody('{"text": "' + testSuiteContext.getTestSuiteId() + ': Started"}"')
-////		postToSlack()
-////		
-////	}
-////
-////	@AfterTestSuite
-////	def notifyAfterTestSuite(TestSuiteContext testSuiteContext) {
-////		slackMessage.setHttpBody('{"text": "' + testSuiteContext.getTestSuiteId() + ': ' + testSuiteStatus + '"}"')
-////		postToSlack()
-////	}
-// }
+//	@AfterTestSuite
+//	def notifyAfterTestSuite(TestSuiteContext testSuiteContext) {
+//		testSuiteName = testSuiteContext.getTestSuiteId()
+//		def value = testSuiteName.split('/')
+//		def result = value[value.size()-1]
+//		slackMessage.setHttpBody('{"text": TestSuite APIs : "' + result + ': ' + testSuiteStatus + '"}"')
+//		postToSlack()
+//	}
+ }

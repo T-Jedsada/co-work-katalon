@@ -19,7 +19,7 @@ public class GlobalVariable {
     /**
      * <p></p>
      */
-	public static Object APK_URL = 'androidapp/APKCOWORK.apk'
+	public static Object APK_URL = 'androidapp/APKCOWORK V.0.0.1.1.apk'
 	 
     /**
      * <p></p>

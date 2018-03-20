@@ -19,20 +19,16 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-APIsTestUser apiUser = new APIsTestUser()
-
-apiUser.setHttpBody()
-
-WS.verifyElementPropertyValue(apiUser.response, 'success', 'true')
-
-WS.verifyElementPropertyValue(apiUser.response, 'data.name', 'Test Automated User')
-
 APIsTestProvider apiProvider = new APIsTestProvider()
 
 apiProvider.setHttpBody()
 
 WS.verifyElementPropertyValue(apiProvider.response, 'success', 'true')
 
-WS.verifyElementPropertyValue(apiProvider.response, 'data.name', 'Test Automated Provider')
+WS.verifyElementPropertyValue(apiProvider.response, 'data.name', 'Test Automate Provider')
 
 WS.verifyElementPropertyValue(apiProvider.response, 'data.rolse', 'provider')
+
+WS.verifyElementPropertyValue(apiProvider.response, 'data.phone', '080-12345678')
+
+WS.verifyElementPropertyValue(apiProvider.response, 'data.contact', '123 m.2 pangtest merng chiangmail 54000')

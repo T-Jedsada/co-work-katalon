@@ -40,11 +40,17 @@ class APIsTestUser {
 	}
 	
 	def setHttpBody() {
-		apiUser.setHttpBody('{"name": "Test Automated User","email": "'+generateRandomString()+'@golfja.com","password": "123456","image": "url"}')
+		String messageJSON = 	'{\
+							      "name": "Test Automated User",\
+							      "email": "'+generateRandomString()+'@golfja.com",\
+							      "password": "123123",\
+							      "image": "url"\
+							    }'
+		apiUser.setHttpBody(messageJSON)
 		postAPI()
 	}
 	
-	public String generateRandomString(){
+	protected String generateRandomString(){
          
         String alphabet= "abcdefghijklmnopqrstuvwxyz";
         String s = "";

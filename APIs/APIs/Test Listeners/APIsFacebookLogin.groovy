@@ -23,49 +23,35 @@ import com.kms.katalon.core.annotation.AfterTestSuite
 import com.kms.katalon.core.context.TestCaseContext
 import com.kms.katalon.core.context.TestSuiteContext
 
-class Slack {
+class APIsFacebookLogin {
 	
-	private RequestObject slackMessage = findTestObject('Object Repository/APIs/Slack')
-	private String testCaseStatus = "ERROR"
-	private String testSuiteStatus = "PASSED"
+	private RequestObject facebookLogin = findTestObject('Object Repository/Login/facebookLogin')
 	
-	private void postToSlack() {
-		if (true) {
-			WS.sendRequest(slackMessage)
+	def response
+	
+	private String facebook_id = "364537690693538"
+	
+	private void postAPI(){
+		if(true){
+			response = WS.sendRequest(facebookLogin)
+			WS.verifyResponseStatusCode(response, 200)
 		}
 	}
 	
-	@BeforeTestCase
-	def notifyBeforeTestCase(TestCaseContext testCaseContext) {
 
-		slackMessage.setHttpBody('{"text": "Test Android : ' + testCaseContext.getTestCaseId()+ ': Running"}"')
-		postToSlack()
-
+	def setHttpBodyFalse() {
+		String messageJSON = 	'{\
+							    "facebook_id" : "sdsds"\
+							    }'
+		facebookLogin.setHttpBody(messageJSON)
+		postAPI()
 	}
 	
-	@AfterTestCase
-	def notifyAfterTestCase(TestCaseContext testCaseContext) {
-
-		testCaseStatus = testCaseContext.getTestCaseStatus()
-		Map variables = testCaseContext.getTestCaseVariables()
-		slackMessage.setHttpBody('{"text": "Test Android : ' + testCaseContext.getTestCaseId() + ': ' + testCaseStatus + '"}"')
-		postToSlack()
-		if (!testCaseStatus.equals("PASSED")){
-			testSuiteStatus = "FAILED"
-		} 
-		
-	}
-
-	@BeforeTestSuite
-	def notifyBeforeTestSuite(TestSuiteContext testSuiteContext) {
-		slackMessage.setHttpBody('{"text": "' + testSuiteContext.getTestSuiteId() + ': Started"}"')
-		postToSlack()
-		
-	}
-
-	@AfterTestSuite
-	def notifyAfterTestSuite(TestSuiteContext testSuiteContext) {
-		slackMessage.setHttpBody('{"text": "' + testSuiteContext.getTestSuiteId() + ': ' + testSuiteStatus + '"}"')
-		postToSlack()
+	def setHttpBodySuccess() {
+		String messageJSON = 	'{\
+								"facebook_id" : "'+facebook_id+'"\
+								}'
+		facebookLogin.setHttpBody(messageJSON)
+		postAPI()
 	}
 }
