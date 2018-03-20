@@ -22,49 +22,36 @@ import com.kms.katalon.core.annotation.AfterTestCase
 import com.kms.katalon.core.annotation.AfterTestSuite
 import com.kms.katalon.core.context.TestCaseContext
 import com.kms.katalon.core.context.TestSuiteContext
-import java.util.UUID;
 
-import org.junit.After
-
-class APIsTestProvider {
+class APIsFacebookLogin {
 	
-	private RequestObject apiProvider = findTestObject('Object Repository/Register/registerProvider')
+	private RequestObject facebookLogin = findTestObject('Object Repository/Login/facebookLogin')
 	
 	def response
 	
+	private String facebook_id = "364537690693538"
+	
 	private void postAPI(){
 		if(true){
-			response = WS.sendRequest(apiProvider)
+			response = WS.sendRequest(facebookLogin)
 			WS.verifyResponseStatusCode(response, 200)
 		}
 	}
 	
 
-	def setHttpBody() {
+	def setHttpBodyFalse() {
 		String messageJSON = 	'{\
-								    "name": "Test Automate Provider",\
-								    "email": "'+generateString()+'@golfja.com",\
-								    "password": "123123",\
-								    "phone": "080-12345678",\
-								    "contact": "123 m.2 pangtest merng chiangmail 54000",\
-								    "image": "url_image.png"\
-								}'	
-		apiProvider.setHttpBody(messageJSON)
+							    "facebook_id" : "sdsds"\
+							    }'
+		facebookLogin.setHttpBody(messageJSON)
 		postAPI()
 	}
 	
-	protected String generateString() {
-		String SALTCHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-		StringBuilder salt = new StringBuilder();
-		Random rnd = new Random();
-		while (salt.length() < 8) { // length of the random string.
-			int index = (int) (rnd.nextFloat() * SALTCHARS.length());
-			salt.append(SALTCHARS.charAt(index));
-		}
-		String saltStr = salt.toString();
-		return saltStr;
-
+	def setHttpBodySuccess() {
+		String messageJSON = 	'{\
+								"facebook_id" : "'+facebook_id+'"\
+								}'
+		facebookLogin.setHttpBody(messageJSON)
+		postAPI()
 	}
-	
-	
 }
