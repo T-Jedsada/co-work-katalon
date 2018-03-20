@@ -27,6 +27,8 @@ class Slack {
 	
 	private RequestObject slackMessage = findTestObject('Object Repository/APIs/Slack')
 	private String testCaseStatus = "ERROR"
+	private String testCaseName = ""
+	private String testSuiteName = ""
 	private String testSuiteStatus = "PASSED"
 	
 	private void postToSlack() {
@@ -35,37 +37,51 @@ class Slack {
 		}
 	}
 	
-	@BeforeTestCase
-	def notifyBeforeTestCase(TestCaseContext testCaseContext) {
-
-		slackMessage.setHttpBody('{"text": "Test APIs : ' + testCaseContext.getTestCaseId()+ ': Running"}"')
-		postToSlack()
-
-	}
+//	@BeforeTestCase
+//	def notifyBeforeTestCase(TestCaseContext testCaseContext) {
+//
+//		slackMessage.setHttpBody('{"text": "Test APIs : ' + testCaseContext.getTestCaseId()+ ': Running"}"')
+//		postToSlack()
+//
+//	}
 	
 	@AfterTestCase
 	def notifyAfterTestCase(TestCaseContext testCaseContext) {
 
 		testCaseStatus = testCaseContext.getTestCaseStatus()
+		testCaseName = testCaseContext.getTestCaseId()
+		def value = testCaseName.split('/')
+		def result = value[value.size()-1]
 		//Map variables = testCaseContext.getTestCaseVariables()
-		slackMessage.setHttpBody('{"text": "Test APIs : ' + testCaseContext.getTestCaseId() + ': ' + testCaseStatus + '"}"')
-		postToSlack()
+//		slackMessage.setHttpBody('{"text": "Test APIs : ' + testCaseContext.getTestCaseId() + ': ' + testCaseStatus + '"}"')
+//		postToSlack()
 		if (!testCaseStatus.equals("PASSED")){
 			testSuiteStatus = "FAILED"
 		} 
+		if(testCaseStatus.equals("ERROR")){
+			slackMessage.setHttpBody('{"text": "Test APIs : ' + result + ': ' + testCaseStatus + '"}"')
+			postToSlack()
+		}
 		
 	}
 
 //	@BeforeTestSuite
 //	def notifyBeforeTestSuite(TestSuiteContext testSuiteContext) {
-//		slackMessage.setHttpBody('{"text": "' + testSuiteContext.getTestSuiteId() + ': Started"}"')
+//
+//		testSuiteName = testSuiteContext.getTestSuiteId()
+//		def value = testSuiteName.split('/')
+//		def result = value[value.size()-1]
+//		slackMessage.setHttpBody('{"text": TestSuite APIs : "' + result + ': Started"}"')
 //		postToSlack()
 //		
 //	}
 //
 //	@AfterTestSuite
 //	def notifyAfterTestSuite(TestSuiteContext testSuiteContext) {
-//		slackMessage.setHttpBody('{"text": "' + testSuiteContext.getTestSuiteId() + ': ' + testSuiteStatus + '"}"')
+//		testSuiteName = testSuiteContext.getTestSuiteId()
+//		def value = testSuiteName.split('/')
+//		def result = value[value.size()-1]
+//		slackMessage.setHttpBody('{"text": TestSuite APIs : "' + result + ': ' + testSuiteStatus + '"}"')
 //		postToSlack()
 //	}
  }
