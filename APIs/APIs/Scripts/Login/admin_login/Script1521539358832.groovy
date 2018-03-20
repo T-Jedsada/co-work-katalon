@@ -19,10 +19,14 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-APIsRegister apiUser = new APIsRegister()
+APIsLogin adminLogin = new APIsLogin()
 
-apiUser.setHttpBodyUser()
+adminLogin.setHttpBodyAdminSuccess()
 
-WS.verifyElementPropertyValue(apiUser.response, 'success', 'true')
+WS.verifyElementPropertyValue(adminLogin.response, 'success', 'true')
 
-WS.verifyElementPropertyValue(apiUser.response, 'data.name', 'Test Automated User')
+WS.verifyElementPropertyValue(adminLogin.response, 'data.email', 'admin@admin.admin')
+
+WS.verifyElementPropertyValue(adminLogin.response, 'data.role', 'admin')
+
+

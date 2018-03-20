@@ -19,17 +19,17 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-APIsFacebookLogin fl = new APIsFacebookLogin()
+APIsLogin facebookLogin = new APIsLogin()
 
-fl.setHttpBodyFalse()
+facebookLogin.setHttpBodyFacebookFalse()
 
-WS.verifyElementPropertyValue(fl.response, 'success', 'false')
+WS.verifyElementPropertyValue(facebookLogin.response, 'success', 'false')
 
-WS.verifyElementPropertyValue(fl.response, 'data.error', 'Do not have this facebook in system.')
+WS.verifyElementPropertyValue(facebookLogin.response, 'data.error', 'Do not have this facebook in system.')
 
-fl.setHttpBodySuccess()
+facebookLogin.setHttpBodyFacebookSuccess()
 
-WS.verifyElementPropertyValue(fl.response, 'success', 'true')
+WS.verifyElementPropertyValue(facebookLogin.response, 'success', 'true')
 
-WS.verifyElementPropertyValue(fl.response, 'data.facebook_id', fl.facebook_id)
+WS.verifyElementPropertyValue(facebookLogin.response, 'data.facebook_id', facebookLogin.facebook_id)
 

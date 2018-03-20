@@ -19,12 +19,12 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-APIsEmailLogin el = new APIsEmailLogin()
+APIsLogin emailLogin = new APIsLogin()
 
-el.setHttpBody()
+emailLogin.setHttpBodyEmailTrue()
 
-WS.verifyElementPropertyValue(el.response, 'success', 'true')
+WS.verifyElementPropertyValue(emailLogin.response, 'success', 'true')
 
-WS.verifyElementPropertyValue(el.response, 'data.email', 'psgolf16@gmail.com')
+WS.verifyElementPropertyValue(emailLogin.response, 'data.email', 'psgolf16@gmail.com')
 
 

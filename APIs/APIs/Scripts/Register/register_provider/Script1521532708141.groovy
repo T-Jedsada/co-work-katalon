@@ -19,15 +19,17 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-APIsTestProvider apiProvider = new APIsTestProvider()
+APIsRegister apiProvider = new APIsRegister()
 
-apiProvider.setHttpBody()
+apiProvider.setHttpBodyProvider()
 
 WS.verifyElementPropertyValue(apiProvider.response, 'success', 'true')
 
-WS.verifyElementPropertyValue(apiProvider.response, 'data.name', 'Test Automate Provider')
+WS.verifyElementPropertyValue(apiProvider.response, 'data.name', 'Test Automated Provider')
 
-WS.verifyElementPropertyValue(apiProvider.response, 'data.rolse', 'provider')
+WS.verifyElementPropertyValue(apiProvider.response, 'data.role', 'provider')
+
+WS.verifyElementPropertyValue(apiProvider.response, 'data.status', 'false')
 
 WS.verifyElementPropertyValue(apiProvider.response, 'data.phone', '080-12345678')
 
