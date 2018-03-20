@@ -4,7 +4,7 @@
    <name>APIs Login</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <lastRun>2018-03-20T15:49:01</lastRun>
+   <lastRun>2018-03-20T17:02:45</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>30</pageLoadTimeout>
@@ -22,5 +22,11 @@
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Login/facebook_login</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>121ecb78-4e9f-4fe2-ac2c-08bd367fe4f0</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Login/admin_login</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>
