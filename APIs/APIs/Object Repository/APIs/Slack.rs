@@ -10,7 +10,7 @@
     &quot;text&quot; : &quot;Test Message&quot;
 }</httpBody>
    <restRequestMethod>POST</restRequestMethod>
-   <restUrl>https://hooks.slack.com/services/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</restUrl>
+   <restUrl>https://hooks.slack.com/services/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</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
