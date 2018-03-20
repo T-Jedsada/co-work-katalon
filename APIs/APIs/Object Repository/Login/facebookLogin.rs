@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebServiceRequestEntity>
    <description></description>
-   <name>Slack</name>
+   <name>facebookLogin</name>
    <tag></tag>
-   <elementGuidId>1de08f13-bd76-4dba-80a5-ede9c184f58a</elementGuidId>
+   <elementGuidId>7f1a1746-6abc-4b48-b1a5-837ebc9b2ecb</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <httpBody>{
-    &quot;text&quot; : &quot;Test Message&quot;
+    &quot;facebook_id&quot; : &quot;sdsds&quot;
 }</httpBody>
+   <httpHeaderProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>Content-Type</name>
+      <type>Main</type>
+      <value>application/json</value>
+   </httpHeaderProperties>
    <restRequestMethod>POST</restRequestMethod>
-   <restUrl>https://hooks.slack.com/services/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</restUrl>
+   <restUrl>https://api-co-work.herokuapp.com/api/facebook-login</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
