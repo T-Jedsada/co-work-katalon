@@ -62,7 +62,6 @@ class Slack {
 			slackMessage.setHttpBody('{"text": "Test APIs : ' + result + ': ' + testCaseStatus + '"}"')
 			postToSlack()
 		}
-		
 	}
 
 //	@BeforeTestSuite
