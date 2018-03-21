@@ -4,7 +4,7 @@
    <tag></tag>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'androidapp/APKCOWORK V.0.0.1.1.apk'</initValue>
+      <initValue>'androidapp/APKCOWORK V.0.0.1.2.apk'</initValue>
       <name>APK_URL</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
