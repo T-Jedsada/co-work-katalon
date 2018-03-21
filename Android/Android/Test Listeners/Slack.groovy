@@ -28,6 +28,7 @@ class Slack {
 	private RequestObject slackMessage = findTestObject('Object Repository/APIs/Slack')
 	private String testCaseStatus = "ERROR"
 	private String testSuiteStatus = "PASSED"
+	private String testCaseName = ""
 	
 	private void postToSlack() {
 		if (true) {
@@ -35,23 +36,25 @@ class Slack {
 		}
 	}
 	
-	@BeforeTestCase
-	def notifyBeforeTestCase(TestCaseContext testCaseContext) {
-
-		slackMessage.setHttpBody('{"text": "Test Android : ' + testCaseContext.getTestCaseId()+ ': Running"}"')
-		postToSlack()
-
-	}
+//	@BeforeTestCase
+//	def notifyBeforeTestCase(TestCaseContext testCaseContext) {
+//
+//		slackMessage.setHttpBody('{"text": "Test Android : ' + testCaseContext.getTestCaseId()+ ': Running"}"')
+//		postToSlack()
+//
+//	}
 	
 	@AfterTestCase
 	def notifyAfterTestCase(TestCaseContext testCaseContext) {
-
 		testCaseStatus = testCaseContext.getTestCaseStatus()
 		Map variables = testCaseContext.getTestCaseVariables()
-		slackMessage.setHttpBody('{"text": "Test Android : ' + testCaseContext.getTestCaseId() + ': ' + testCaseStatus + '"}"')
-		postToSlack()
+		testCaseName = testCaseContext.getTestCaseId()
+		def value = testCaseName.split("/")
+		def result = value[value.size()-1]
 		if (!testCaseStatus.equals("PASSED")){
 			testSuiteStatus = "FAILED"
+			slackMessage.setHttpBody('{"text": "Test Android : ' + result + ': ' + testCaseStatus + '"}"')
+			postToSlack()
 		} 
 		
 	}
@@ -60,7 +63,6 @@ class Slack {
 	def notifyBeforeTestSuite(TestSuiteContext testSuiteContext) {
 		slackMessage.setHttpBody('{"text": "' + testSuiteContext.getTestSuiteId() + ': Started"}"')
 		postToSlack()
-		
 	}
 
 	@AfterTestSuite
