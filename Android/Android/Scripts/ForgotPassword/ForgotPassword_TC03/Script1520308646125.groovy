@@ -25,6 +25,10 @@ Mobile.waitForElementPresent(findTestObject('go to login page'), 0)
 
 Mobile.tap(findTestObject('go to login page'), 0)
 
+Mobile.waitForElementPresent(findTestObject('go to login ok'), 0)
+
+Mobile.tap(findTestObject('go to login ok'), 0)
+
 Mobile.waitForElementPresent(findTestObject('ForgotPassword/txt/txt Forgot Password'), 0)
 
 Mobile.tap(findTestObject('ForgotPassword/txt/txt Forgot Password'), 0)

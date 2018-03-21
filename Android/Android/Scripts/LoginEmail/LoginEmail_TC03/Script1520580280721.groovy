@@ -25,6 +25,10 @@ Mobile.waitForElementPresent(findTestObject('go to login page'), 0)
 
 Mobile.tap(findTestObject('go to login page'), 0)
 
+Mobile.waitForElementPresent(findTestObject('go to login ok'), 0)
+
+Mobile.tap(findTestObject('go to login ok'), 0)
+
 Mobile.waitForElementPresent(findTestObject('Login/edt E-mail'), 0)
 
 Mobile.setText(findTestObject('Login/edt E-mail'), 'patawee', 0)
